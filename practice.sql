@@ -119,3 +119,15 @@ GROUP BY Song.GenreId;
 
 SELECT MAX(AlbumLength) as "Longest Song", Title
 from Album;
+
+-- 10.) Using MAX() function, write a select statement to find the song with the longest duration. The result should display the song title and the duration.
+
+SELECT MAX(SongLength) as "Longest Song", Title
+FROM Song;
+
+-- 11.) Modify the previous query to also display the title of the album.
+
+SELECT MAX(SongLength) as "Longest Song", s.Title, al.Title
+FROM Song s
+JOIN Album al
+ON s.AlbumId = al.AlbumId;
